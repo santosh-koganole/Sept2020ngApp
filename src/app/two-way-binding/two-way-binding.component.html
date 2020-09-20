@@ -1,0 +1,76 @@
+<p>two-way-binding works!</p>
+<h1>One Way Fail Test</h1>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+          <label for=""></label>
+          <input type="text"
+            class="form-control" (keyup)="OneWayBinding($event)" aria-describedby="helpId" placeholder="Enter name">
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        
+    </div>
+    <div class="col-md-4">
+        <div class="alert alert-primary" role="alert">
+            <strong>{{OneWayMessage}}</strong>
+        </div>
+        
+    </div>
+    <div class="col-md-4">
+      <button type="button" (click)="OneWayFailTest($event)"  class="btn btn-primary">One Way Test</button>
+        
+    </div>
+
+</div>
+<br>
+<hr>
+
+<h1>Two Way Test</h1>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+          <label for=""></label>
+          <input type="text"
+            class="form-control" [(ngModel)]="TwoWayMessage" aria-describedby="helpId" placeholder="Enter name">
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        
+    </div>
+    <div class="col-md-4">
+        <div class="alert alert-primary" role="alert">
+            <strong>{{TwoWayMessage}}</strong>
+        </div>
+        
+    </div>
+    <div class="col-md-4">
+      <button type="button"  (click)="TwoWayFailTest($event)" class="btn btn-primary">Two Way Test</button>
+        
+    </div>
+
+</div>
+
+<hr>
+
+<h1>Two Way Bidnig Test with Breakdown syntax [] and () </h1>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+          <label for=""></label>
+          <input type="text"
+            class="form-control" [ngModel]="TwoWayMessage2" (ngModelChange)="TwoWayMessageCange($event)" aria-describedby="helpId" placeholder="Enter name">
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        
+    </div>
+    <div class="col-md-4">
+        <div class="alert alert-primary" role="alert">
+            <strong>{{TwoWayMessage2}}</strong>
+        </div>
+        
+    </div>
+    <div class="col-md-4">
+      <button type="button"  (click)="TwoWayFailTest2($event)" class="btn btn-primary">Two Way Test2 </button>
+        
+    </div>
+
+</div>

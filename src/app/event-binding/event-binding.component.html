@@ -1,0 +1,26 @@
+<p>event-binding works!</p>
+
+<div> {{message}}</div>
+<!-- <button type="button" (click)= "message='Clicked'" class="btn btn-primary">Click ME</button> -->
+ <button type="button" (click)= "clickedButton()" class="btn btn-primary">Click ME</button><br><hr>
+
+<button type="button" (dblclick)= "doubleClickedButton()" class="btn btn-primary">Double Click ME</button>
+
+<br>
+
+<div class="form-group">
+  <label for=""></label>
+  <input type="text"
+    class="form-control"  aria-describedby="helpId" (input)="textChanges($event)" placeholder="Enter name">
+  <small id="helpId"  class="form-text text-muted">Help text</small>
+</div>
+
+<hr>
+<input type="text"
+    class="form-control"  aria-describedby="helpId" (keyup)="textChanges($event)" placeholder="Enter name for keyup">
+
+    <div>{{inputText}}</div>
+
+    <div class="alert alert-success" role="alert">
+    <strong>success</strong>
+</div>
