@@ -1,0 +1,58 @@
+<h1>Product List</h1>
+
+<table *ngIf="products.length>0 else noproducts" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Sl No.</th>
+            <th>Product Name</th>
+            <th>Product Code</th>
+            <th>Release Date</th>
+            <th>Description</th>
+            <th>emailId</th>
+            <th>Price</th>
+            <th>Star Rating</th>
+            <th>Image Url</th>
+            <th>Product ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr [style.backgroundColor]="product.starRating > 3 ? 'green':'red'"
+            [style.fontWeight]="product.starRating > 3 ? 'bold':''"
+           *ngFor="let product of products,let i=index "> -->
+
+           <!-- <tr [ngStyle]="{'background-color': (product.starRating >3? 'green':'red'),'font-weight':(product.starRating >3? 'bold':'')}"  *ngFor="let product of products,let i=index"> -->
+           
+            <tr [ngClass]="GetClass(product)"  *ngFor="let product of products,let i=index">
+            
+            <td>{{i+1}}</td>
+            <td [style.backgroundColor]="product.starRating > 3 ? 'green':'red'">{{product.productName}}</td>
+            <td>{{product.productCode}}</td>
+            <td>{{product.releaseDate}}</td>
+            <td>{{product.description.descText}}</td>
+            <td>{{product.description.emailId}}</td>
+            <td>{{product.price}}</td>
+            <!-- <td>{{product.starRating}}</td> -->
+            <td [ngSwitch]="product.starRating">
+                <span *ngSwitchCase="1">Very bad</span>
+                <span *ngSwitchCase="2">Bad</span>
+                <span *ngSwitchCase="3">Average</span>
+                <span *ngSwitchCase="4">Good</span>
+                <span *ngSwitchCase="5">Very Good</span>
+
+                <span *ngSwitchDefault>NA</span>
+            </td>
+            <td><img [src]="product.imageUrl"  alt="{{product.productName}}" width="100px" height="100px"></td>
+            <td><div class="alert alert-primary" (click)="idTest(product.productId)" role="alert">
+                <strong>Click Me</strong>
+            </div></td>
+        </tr>
+       
+    </tbody>
+</table>
+
+<ng-template #noproducts>
+    <div class="alert alert-info" role="alert">
+        <strong>No Products Available</strong>
+    </div>
+
+</ng-template>

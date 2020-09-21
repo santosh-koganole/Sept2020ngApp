@@ -1,0 +1,12 @@
+.ratingMoreThan3{
+    background-color: cadetblue;
+}
+
+.ratingLessThan3{
+    background-color: chartreuse;
+}
+
+.bolder{
+
+    font-weight: bolder;
+}

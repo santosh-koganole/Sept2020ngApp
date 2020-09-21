@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { StringInterpolationComponent} from './String-Interpolation/string-interpoloation.component';
 import { PropertyBindingComponent } from './property-binding/property-binding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
-import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component'
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { ProductsComponent } from './products/products.component'
 
 @NgModule({
   declarations: [
     AppComponent,   //Here we declare Components,Pipe,Directives
-    StringInterpolationComponent, PropertyBindingComponent, EventBindingComponent, TwoWayBindingComponent
+    StringInterpolationComponent, PropertyBindingComponent, EventBindingComponent, TwoWayBindingComponent, ProductsComponent
   ],
   imports: [
     BrowserModule,
