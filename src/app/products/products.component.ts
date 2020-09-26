@@ -21,7 +21,13 @@ else if(product.starRating <3)
 return "ratingLessThan3"
 
  }
-  //products:any[] = [];
+ childData:string ="";
+ chiledDataRecieved(data:any){
+      //console.log("ChildData "+ data);
+      this.childData=  data;
+ }
+
+ //products:any[] = [];
   products:any[] = [
   //tempProducts:any[] = [
     {
