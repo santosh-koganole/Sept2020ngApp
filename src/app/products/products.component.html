@@ -1,4 +1,8 @@
 <h1>Product List</h1>
+<h4>{{dateTimeNow}}</h4>
+<h4>{{dateTimeNow | date}}</h4>
+<h4>{{dateTimeNow | date :'short' }}</h4>
+<h4>{{dateTimeNow | date:'longTime'}}</h4>
 
 <!-- <table *ngIf="products.length>0 else noproducts" class="table table-bordered">
     <thead>
@@ -64,7 +68,19 @@
 </div>
 
 <div class="row">
-         <div style="margin-bottom: 10px;" *ngFor="let prod of products;let i=index" class="col-md-4">
+        <div style="margin-left: 20px;" class="col-md-2"> 
+                Filter Product:
+        </div>
+        <div  class="col-md-2"> 
+          <div class="form-group">
+            <input type="text"  class="form-control" [(ngModel)]="filterText" placeholder="Filter Product">
+           
+          </div>
+    </div>
+</div>
+
+<div class="row">
+         <div style="margin-bottom: 10px;" *ngFor="let prod of products | filterproduct :filterText :'productName' ;let i=index" class="col-md-4">
                  <product-thumbnail [product]="prod" (parentData)="chiledDataRecieved($event)"></product-thumbnail>
           <div>
 </div>

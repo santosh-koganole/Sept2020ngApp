@@ -8,13 +8,15 @@ import { PropertyBindingComponent } from './property-binding/property-binding.co
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { ProductsComponent } from './products/products.component';
-import { ProductThumbnailComponent } from './products/product-thumbnail/product-thumbnail.component'
+import { ProductThumbnailComponent } from './products/product-thumbnail/product-thumbnail.component';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { FilterPipe } from './pipes/filter.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,   //Here we declare Components,Pipe,Directives
     StringInterpolationComponent, PropertyBindingComponent, EventBindingComponent,
-     TwoWayBindingComponent, ProductsComponent, ProductThumbnailComponent
+     TwoWayBindingComponent, ProductsComponent, ProductThumbnailComponent, ShortenPipe, FilterPipe
   ],
   imports: [
     BrowserModule,

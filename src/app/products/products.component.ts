@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ProductsComponent implements OnInit {
 
   constructor() { }
+  filterText :string="";
+  filterColumn:string="";
 
   idTest(prodId){
     alert(prodId);
@@ -26,7 +28,7 @@ return "ratingLessThan3"
       //console.log("ChildData "+ data);
       this.childData=  data;
  }
-
+ dateTimeNow :Date = new Date();
  //products:any[] = [];
   products:any[] = [
   //tempProducts:any[] = [
