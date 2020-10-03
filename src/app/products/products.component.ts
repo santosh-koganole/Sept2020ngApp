@@ -1,20 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggerService } from '../Services/logger.service';
+import { Description, Product } from '../Services/product.data';
+import { ProductService } from '../Services/product.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent{
 
-  constructor() { }
+  products:Product[] = [];
+  constructor (private logger:LoggerService,private productService : ProductService){
+    this.products= this.productService.GetProductList();
+
+  }
   filterText :string="";
   filterColumn:string="";
-
-  idTest(prodId){
+  
+   idTest(prodId){
     alert(prodId);
  }
 
+ AddProduct(){
+   var product =new Product(15,"TestProd","GDN",new Date(1,10,2020),25.52,4,"",false,new Description("Test Description","test@gmail.com"));
+    this.productService.AddProduct(product);
+ }
  GetClass(product){
 if(product.starRating >3){
   return "ratingMoreThan3 bolder"
@@ -24,14 +35,21 @@ return "ratingLessThan3"
 
  }
  childData:string ="";
- chiledDataRecieved(data:any){
-      //console.log("ChildData "+ data);
+ /*chiledDataRecieved(data:any){
+      console.log("ChildData "+ data);
       this.childData=  data;
- }
+ }*/
+ chiledDataRecieved(data:any){
+    this.childData=  data;
+    var logger =new LoggerService();
+    this.logger.log(data);
+}
+
  dateTimeNow :Date = new Date();
  //products:any[] = [];
-  products:any[] = [
+  
   //tempProducts:any[] = [
+   /* products:any[] = [
     {
       "productId": 1,
       "productName": "Leaf Rake",
@@ -87,7 +105,7 @@ return "ratingLessThan3"
       "imageUrl": "https://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }
   ];
-  
+  */
 
 
   ngOnInit() {

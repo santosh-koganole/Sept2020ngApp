@@ -14,4 +14,6 @@ export * from "./products/product-thumbnail/product-thumbnail.component";
 export * from "./products/products.component";
 export * from "./property-binding/property-binding.component";
 export * from "./two-way-binding/two-way-binding.component";
+export * from "./Services/logger.service";
+export * from "./Services/product.service";
 

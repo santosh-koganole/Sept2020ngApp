@@ -12,8 +12,10 @@ import {
   ProductThumbnailComponent,
   ShortenPipe,FilterPipe,
   BasicHighlightDirective,
-  BetterHighlightDirective
+  BetterHighlightDirective,
+  LoggerService
 } from "./application.index"
+import { ProductService } from './Services/product.service';
 
 //import { AppComponent } from './app.component';
 //import { StringInterpolationComponent} from './String-Interpolation/string-interpoloation.component';
@@ -34,13 +36,14 @@ import {
     StringInterpolationComponent, PropertyBindingComponent, EventBindingComponent,
      TwoWayBindingComponent, ProductsComponent, ProductThumbnailComponent, ShortenPipe, FilterPipe,
      BasicHighlightDirective,
-     BetterHighlightDirective
+     BetterHighlightDirective,
+
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],  // here we add services 
+  providers: [LoggerService],  // here we add services 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
