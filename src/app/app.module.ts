@@ -16,6 +16,21 @@ import {
   LoggerService
 } from "./application.index"
 import { ProductService } from './Services/product.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { Route, RouterModule,Routes } from '@angular/router';
+import { StudentsComponent } from './students/students.component';
+
+//const routes :Route[]=[];
+ const routes :Route[]=[
+ {path : "home", component:DashboardComponent}, //localhost:4200/home - DashboardComponent
+ {path : "products", component: ProductsComponent}, //localhost:4200/products - ProductsComponent
+ {path : "students", component: StudentsComponent},
+ {path :"", redirectTo:"home",pathMatch:"full"},
+ {path :"**",redirectTo:"home"}
+ ];
+
 
 //import { AppComponent } from './app.component';
 //import { StringInterpolationComponent} from './String-Interpolation/string-interpoloation.component';
@@ -37,11 +52,16 @@ import { ProductService } from './Services/product.service';
      TwoWayBindingComponent, ProductsComponent, ProductThumbnailComponent, ShortenPipe, FilterPipe,
      BasicHighlightDirective,
      BetterHighlightDirective,
+     DashboardComponent,
+     HeaderComponent,
+     FooterComponent,
+     StudentsComponent,
 
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [LoggerService],  // here we add services 
   bootstrap: [AppComponent]
