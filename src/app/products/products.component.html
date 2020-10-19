@@ -90,6 +90,9 @@
 
 <div class="row">
          <div style="margin-bottom: 10px;" *ngFor="let prod of products | filterproduct :filterText :'productName' ;let i=index" class="col-md-4">
-                 <product-thumbnail [product]="prod" (parentData)="chiledDataRecieved($event)"></product-thumbnail>
+                 <product-thumbnail [routerLink]="['/productDetails',prod.productId]" [product]="prod" (parentData)="chiledDataRecieved($event)"></product-thumbnail>
           <div>
+          
+            <!-- <product-thumbnail [routerLink]="['/productDetails',prod.productId]" *ngFor="let prod of products | filter : filterText: 'productName':'productCode':'productId'"
+             class="col-md-4" [productDetails]="prod" (pd)="ChildDataReceived($event)"></product-thumbnail> -->
 </div>

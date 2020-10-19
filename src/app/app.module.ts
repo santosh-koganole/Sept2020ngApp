@@ -13,22 +13,24 @@ import {
   ShortenPipe,FilterPipe,
   BasicHighlightDirective,
   BetterHighlightDirective,
-  LoggerService
+  LoggerService,
+  ProductService,
+  DashboardComponent,
+  HeaderComponent,
+  FooterComponent,
+  StudentsComponent,
+  ProductDetailsComponent
 } from "./application.index"
-import { ProductService } from './Services/product.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { Route, RouterModule,Routes } from '@angular/router';
-import { StudentsComponent } from './students/students.component';
 
 //const routes :Route[]=[];
  const routes :Route[]=[
  {path : "home", component:DashboardComponent}, //localhost:4200/home - DashboardComponent
  {path : "products", component: ProductsComponent}, //localhost:4200/products - ProductsComponent
- {path : "students", component: StudentsComponent},
+ {path:"productDetails/:id",component:ProductDetailsComponent}, 
+ {path:"students",component:StudentsComponent},
  {path :"", redirectTo:"home",pathMatch:"full"},
- {path :"**",redirectTo:"home"}
+ //{path :"**",redirectTo:"home"}
  ];
 
 
@@ -56,6 +58,7 @@ import { StudentsComponent } from './students/students.component';
      HeaderComponent,
      FooterComponent,
      StudentsComponent,
+     ProductDetailsComponent,
 
   ],
   imports: [

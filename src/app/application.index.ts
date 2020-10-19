@@ -16,4 +16,9 @@ export * from "./property-binding/property-binding.component";
 export * from "./two-way-binding/two-way-binding.component";
 export * from "./Services/logger.service";
 export * from "./Services/product.service";
-
+export * from './Services/product.service';
+export * from './dashboard/dashboard.component';
+export * from './header/header.component';
+export * from './footer/footer.component';
+export * from './students/students.component';
+export * from './products/product-details/product-details.component';
