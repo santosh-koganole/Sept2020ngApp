@@ -13,4 +13,9 @@ export class StudentService {
   GetStudentsList():Student[] {
   return this.students;
   }
+
+  GetStudentDetails(id:number):Student {
+    return this.students.find((std)=>std.StudentId == id);
+    
+    }
 }

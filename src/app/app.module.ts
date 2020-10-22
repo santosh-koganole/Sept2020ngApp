@@ -19,16 +19,24 @@ import {
   HeaderComponent,
   FooterComponent,
   StudentsComponent,
-  ProductDetailsComponent
+  ProductDetailsComponent,
+  StudentDetailsComponent,
+  StudentEditComponent,
+  StudentsGuardService
 } from "./application.index"
 import { Route, RouterModule,Routes } from '@angular/router';
+
+
 
 //const routes :Route[]=[];
  const routes :Route[]=[
  {path : "home", component:DashboardComponent}, //localhost:4200/home - DashboardComponent
  {path : "products", component: ProductsComponent}, //localhost:4200/products - ProductsComponent
  {path:"productDetails/:id",component:ProductDetailsComponent}, 
- {path:"students",component:StudentsComponent},
+ {path:"students",component:StudentsComponent,children:[
+   {path:":id",component:StudentDetailsComponent,canActivate :[StudentsGuardService]} ,
+   {path:":id/edit",component:StudentEditComponent}
+ ]},
  {path :"", redirectTo:"home",pathMatch:"full"},
  //{path :"**",redirectTo:"home"}
  ];
@@ -59,6 +67,8 @@ import { Route, RouterModule,Routes } from '@angular/router';
      FooterComponent,
      StudentsComponent,
      ProductDetailsComponent,
+     StudentDetailsComponent,
+     StudentEditComponent
 
   ],
   imports: [
